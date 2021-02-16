@@ -3,13 +3,23 @@
 
 #Simple python code to generate random password with user generated length.
 
-from random import *
+import random 
 import string
 
-characters = string.ascii_letters + string.ascii_lowercase + string.ascii_uppercase + string.digits
+#concancating imported strings for password
+password_characters = string.ascii_letters + string.ascii_lowercase + string.ascii_uppercase + string.digits
 
-password = "".join(choice(characters) for x in range(randint(8, 12)))
+#Starting with a blank password
+password = []
 
-print(password)
+#Get user input for length of password
+
+password_length = int(input("Enter the length of desired password: "))
+
+for char in range(password_length):
+    password.append(random.choice(password_characters))
+
+#print out generated password
+print("".join (password))
 
 
