@@ -16,6 +16,8 @@ password = []
 
 password_length = int(input("Enter the length of desired password: "))
 
+#loop strings to generate random password
+
 for char in range(password_length):
     password.append(random.choice(password_characters))
 
